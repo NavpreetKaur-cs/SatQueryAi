@@ -1,0 +1,148 @@
+[
+    {
+        "query": "What objects are visible in this satellite image?",
+        "task": "single_image"
+    },
+    {
+        "query": "Describe the land cover in this image.",
+        "task": "single_image"
+    },
+    {
+        "query": "What is shown in this remote sensing image?",
+        "task": "single_image"
+    },
+    {
+        "query": "Identify the major features visible in this satellite image.",
+        "task": "single_image"
+    },
+    {
+        "query": "Is there a water body in this image?",
+        "task": "single_image"
+    },
+    {
+        "query": "Are there buildings visible in this image?",
+        "task": "single_image"
+    },
+    {
+        "query": "Describe the scene shown in the satellite image.",
+        "task": "single_image"
+    },
+    {
+        "query": "What type of land cover is present?",
+        "task": "single_image"
+    },
+    {
+        "query": "Locate the water body in this image.",
+        "task": "single_image"
+    },
+    {
+        "query": "Highlight the region containing buildings.",
+        "task": "single_image"
+    },
+    {
+        "query": "What is the dominant land cover?",
+        "task": "single_image"
+    },
+    {
+        "query": "Give me a description of this satellite scene.",
+        "task": "single_image"
+    },
+
+    {
+        "query": "What changed between these two satellite images?",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Compare these two images and identify the differences.",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Has the built-up area increased?",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Has vegetation decreased between the two dates?",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Identify changes between the before and after images.",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Where did the changes occur?",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Show me the areas that changed over time.",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Did the water coverage increase or decrease?",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Compare the land cover at the two different times.",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Has urban expansion occurred between these observations?",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Describe the differences between the two satellite observations.",
+        "task": "change_analysis"
+    },
+    {
+        "query": "Determine whether anything changed between these dates.",
+        "task": "change_analysis"
+    },
+
+    {
+        "query": "Use the optical and SAR images together.",
+        "task": "multimodal"
+    },
+    {
+        "query": "Analyze the optical and radar imagery jointly.",
+        "task": "multimodal"
+    },
+    {
+        "query": "Use both optical and SAR data to identify built-up areas.",
+        "task": "multimodal"
+    },
+    {
+        "query": "Combine information from the optical and SAR images.",
+        "task": "multimodal"
+    },
+    {
+        "query": "What can be identified using both SAR and optical imagery?",
+        "task": "multimodal"
+    },
+    {
+        "query": "Use the radar image together with the optical image to identify water.",
+        "task": "multimodal"
+    },
+    {
+        "query": "Perform cross-modal analysis using these two satellite images.",
+        "task": "multimodal"
+    },
+    {
+        "query": "Analyze these optical and radar observations together.",
+        "task": "multimodal"
+    },
+    {
+        "query": "Identify land-cover information using both sensors.",
+        "task": "multimodal"
+    },
+    {
+        "query": "Fuse the SAR and multispectral images.",
+        "task": "multimodal"
+    },
+    {
+        "query": "What additional information can SAR provide when combined with optical imagery?",
+        "task": "multimodal"
+    },
+    {
+        "query": "Use both modalities to analyze this geographic area.",
+        "task": "multimodal"
+    }
+]

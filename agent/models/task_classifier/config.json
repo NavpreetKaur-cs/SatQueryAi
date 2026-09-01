@@ -1,0 +1,11 @@
+{
+    "embedding_model": "all-MiniLM-L6-v2",
+    "classes": [
+        "change_analysis",
+        "multimodal",
+        "single_image"
+    ],
+    "classifier": "LogisticRegression",
+    "max_iter": 2000,
+    "accuracy": 0.8888888888888888
+}
