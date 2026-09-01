@@ -1,3 +1,126 @@
+SATQUERY AI – TEAM WORK DISTRIBUTION
+Person 1 – Model Adaptation
+
+Assigned folders:
+
+modules/model_adaptation/
+data/bigearthnet/
+models/adaptation/
+
+Work:
+
+Prepare and preprocess the BigEarthNet dataset.
+Select a suitable vision or vision-language model.
+Fine-tune or adapt the model for remote-sensing imagery.
+Test and evaluate the adapted model.
+Provide a reusable model/inference interface for integration with the main system.
+Document the model, dataset used, and basic performance.
+Person 2 – Single Image Analysis
+
+Assigned folders:
+
+modules/single_image/
+data/vrsbench/
+data/rsvqa/
+models/single_image/
+
+Work:
+
+Implement single-image Visual Question Answering (VQA).
+Use RSVQA and/or VRSBench datasets for development and evaluation.
+Implement one additional single-image feature such as image captioning, scene description, or text-guided region grounding.
+Process supported image inputs and natural-language queries.
+Return answers, confidence if available, and visual results where applicable.
+Provide a clean interface for the agent to call the module.
+Person 3 – Change Analysis
+
+Assigned folders:
+
+modules/change_analysis/
+data/cdvqa/
+models/change_analysis/
+
+Work:
+
+Implement analysis of two images captured at different times.
+Detect and identify changes between the images.
+Implement change description and/or change-based Visual Question Answering.
+Answer queries such as whether built-up areas, vegetation, water bodies, or other regions have changed.
+Generate visual change results such as change maps or highlighted regions if possible.
+Use CDVQA for development and evaluation.
+Provide a clean interface for the agent to call the module.
+Person 4 – Optical and SAR Multimodal Analysis
+
+Assigned folders:
+
+modules/multimodal/
+data/optical_sar/
+models/multimodal/
+
+Work:
+
+Handle paired optical/multispectral and SAR images.
+Validate that the input images are compatible for joint analysis.
+Extract useful information from both image types.
+Combine or fuse information from optical and SAR imagery.
+Implement cross-modal analysis for tasks such as identifying built-up areas, water bodies, or other land-cover information.
+Return textual answers, confidence if available, and visual evidence where applicable.
+Provide a clean interface for the agent to call the module.
+Person 5 – Agent and Model Orchestration
+
+Assigned folder:
+
+agent/
+
+Work:
+
+Build the main agent/controller of SatQuery AI.
+Interpret the user's natural-language query.
+Check the number and type of input images.
+Decide which task needs to be performed.
+Route requests to the correct specialist module.
+Support single-image analysis, change analysis, and optical-SAR multimodal analysis.
+Maintain a registry of available models/tools.
+Collect and combine results from different modules.
+Return a standard output including answer, confidence, models used, and execution summary.
+Keep the routing and execution process clear and auditable.
+Person 6 – Backend, Frontend and Application Integration
+
+Assigned folders:
+
+backend/
+uploads/
+frontend/
+
+Work:
+
+Build the FastAPI backend.
+Create APIs for image upload and analysis requests.
+Connect the backend with the agent/controller.
+Define and maintain clear input/output API contracts.
+Handle file uploads and supported image formats.
+Build the frontend/web interface for SatQuery AI.
+Allow users to upload one or more satellite images.
+Allow users to enter natural-language queries.
+Display textual answers, confidence, visual outputs, and execution summaries.
+Handle integration of all modules into one working application.
+Keep the final application stable and ready for demonstration.
+Shared Responsibilities
+
+All team members should:
+
+Work mainly inside their assigned folders.
+Create and work on their own Git branch.
+Pull the latest changes before starting work.
+Avoid modifying another person's module without informing them.
+Add only relevant files when committing.
+Keep commits focused and meaningful.
+Use the common root requirements.txt.
+Inform the team before adding new dependencies.
+Do not push large datasets or model files to GitHub.
+Keep shared folders (outputs/, tests/, and docs/) organized.
+Follow the common input/output contract for easier backend and frontend integration
+
 SATQUERY AI – TEAM DEVELOPMENT RULES
 
 1. GENERAL RULE
