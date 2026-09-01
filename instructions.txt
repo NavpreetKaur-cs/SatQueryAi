@@ -1,0 +1,142 @@
+SATQUERY AI – TEAM DEVELOPMENT RULES
+
+1. GENERAL RULE
+Each team member should primarily work only inside their assigned module/folder.
+gitkeep of each folder has number according to below(1-6)
+Person 1:
+modules/model_adaptation/
+data/bigearthnet/
+models/adaptation/
+
+Person 2:
+modules/single_image/
+data/vrsbench/
+data/rsvqa/
+models/single_image/
+
+Person 3:
+modules/change_analysis/
+data/cdvqa/
+models/change_analysis/
+
+Person 4:
+modules/multimodal/
+data/optical_sar/
+models/multimodal/
+
+Person 5:
+agent/
+
+Person 6:
+backend/
+uploads/
+frontend/
+
+Shared folders:
+outputs/
+tests/
+docs/
+
+2. DO NOT MODIFY ANOTHER PERSON'S MODULE
+Do not directly modify files inside another person's assigned module unless:
+
+* Other Person has been informed.
+* The change is necessary for integration.
+* The team agrees on the change.
+
+3. CREATE YOUR OWN BRANCH
+
+Do not work directly on the main branch.
+
+Create a branch based on your assigned module.
+
+Examples:
+
+feature/model-adaptation
+feature/single-image
+feature/change-analysis
+feature/multimodal
+feature/backend-agent
+feature/frontend
+
+Before starting work:
+
+git checkout main
+git pull origin main
+git checkout -b feature/your-module
+
+4. BEFORE PUSHING
+Always check your changes:
+git status
+Add only the files related to your work:
+git add path/to/your/files
+Do NOT blindly use:
+git add .
+unless you are sure that no unrelated files are being added.
+
+5. COMMIT RULES
+Keep commits focused on one logical change.
+
+6. PULL BEFORE STARTING
+Before starting new work:
+git checkout main
+git pull origin main
+Then update your branch with the latest changes if needed.
+Do not overwrite newer work from other team members.
+
+7. DO NOT PUSH LARGE DATASETS OR MODEL FILES
+Do not remove .gitignore rules without team discussion.
+
+8. REQUIREMENTS RULE
+All team members should use the common root requirements.txt.
+
+Setup:
+python -m venv .venv
+Activate the environment and install:
+pip install -r requirements.txt
+If your module requires a new package:
+1. Inform the team.
+2. Add the required package to requirements.txt.
+3. Avoid adding unnecessary packages.
+4. Make sure existing functionality is not broken.
+
+Input:
+
+* Images
+* Natural-language query
+* Metadata, if required
+
+Output:
+
+* success status
+* textual answer/result
+* confidence, if available
+* visual output path/data, if applicable
+* model/task metadata
+* error message, if execution fails
+
+Do not change the shared input/output contract without informing the backend and frontend members.
+
+10. SHARED FOLDERS
+The following folders are shared:
+
+outputs/
+tests/
+docs/
+
+When modifying shared folders:
+
+* Do not delete another person's files.
+* Use clear filenames.
+* Avoid changing shared structures without informing the team.
+* Keep outputs organized by module or task when necessary.
+
+11. BACKEND AND FRONTEND INTEGRATION
+
+The backend member should define API contracts clearly.
+The frontend should not depend on undocumented API behavior.
+
+12. PULL REQUEST / MERGE RULE
+
+Do not merge major changes directly into main without checking them.
+Main should always remain as stable as possible.
