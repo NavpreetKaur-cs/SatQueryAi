@@ -1,4 +1,5 @@
 SATQUERY AI – TEAM WORK DISTRIBUTION
+
 Person 1 – Model Adaptation
 
 Assigned folders:
@@ -9,12 +10,18 @@ models/adaptation/
 
 Work:
 
-Prepare and preprocess the BigEarthNet dataset.
+Prepare and preprocess the BigEarthNet.txt dataset and/or other permitted open-source training data.
+
 Select a suitable vision or vision-language model.
+
 Fine-tune or adapt the model for remote-sensing imagery.
+
 Test and evaluate the adapted model.
+
 Provide a reusable model/inference interface for integration with the main system.
-Document the model, dataset used, and basic performance.
+
+Document the model, dataset used, adaptation method, and basic performance.
+
 Person 2 – Single Image Analysis
 
 Assigned folders:
@@ -27,11 +34,17 @@ models/single_image/
 Work:
 
 Implement single-image Visual Question Answering (VQA).
+
 Use RSVQA and/or VRSBench datasets for development and evaluation.
-Implement one additional single-image feature such as image captioning, scene description, or text-guided region grounding.
+
+Implement at least one additional single-image feature: image captioning/scene description or text-guided region grounding.
+
 Process supported image inputs and natural-language queries.
+
 Return answers, confidence if available, and visual results where applicable.
+
 Provide a clean interface for the agent to call the module.
+
 Person 3 – Change Analysis
 
 Assigned folders:
@@ -43,12 +56,19 @@ models/change_analysis/
 Work:
 
 Implement analysis of two images captured at different times.
+
 Detect and identify changes between the images.
+
 Implement change description and/or change-based Visual Question Answering.
+
 Answer queries such as whether built-up areas, vegetation, water bodies, or other regions have changed.
+
 Generate visual change results such as change maps or highlighted regions if possible.
+
 Use CDVQA for development and evaluation.
+
 Provide a clean interface for the agent to call the module.
+
 Person 4 – Optical and SAR Multimodal Analysis
 
 Assigned folders:
@@ -60,12 +80,19 @@ models/multimodal/
 Work:
 
 Handle paired optical/multispectral and SAR images.
+
 Validate that the input images are compatible for joint analysis.
+
 Extract useful information from both image types.
-Combine or fuse information from optical and SAR imagery.
+
+Perform joint/cross-modal analysis by combining or fusing information from co-registered optical/multispectral and SAR imagery.
+
 Implement cross-modal analysis for tasks such as identifying built-up areas, water bodies, or other land-cover information.
+
 Return textual answers, confidence if available, and visual evidence where applicable.
+
 Provide a clean interface for the agent to call the module.
+
 Person 5 – Agent and Model Orchestration
 
 Assigned folder:
@@ -75,15 +102,29 @@ agent/
 Work:
 
 Build the main agent/controller of SatQuery AI.
+
 Interpret the user's natural-language query.
+
 Check the number and type of input images.
+
 Decide which task needs to be performed.
+
 Route requests to the correct specialist module.
+
 Support single-image analysis, change analysis, and optical-SAR multimodal analysis.
+
+Sequence and execute multiple specialist models/tools when required by a query.
+
 Maintain a registry of available models/tools.
+
 Collect and combine results from different modules.
+
 Return a standard output including answer, confidence, models used, and execution summary.
+
 Keep the routing and execution process clear and auditable.
+
+The observable execution summary should include the selected task, models/tools used, permitted parameters, and outputs.
+
 Person 6 – Backend, Frontend and Application Integration
 
 Assigned folders:
@@ -95,77 +136,113 @@ frontend/
 Work:
 
 Build the FastAPI backend.
+
 Create APIs for image upload and analysis requests.
+
 Connect the backend with the agent/controller.
+
 Define and maintain clear input/output API contracts.
+
 Handle file uploads and supported image formats.
+
+Support GeoTIFF/TIFF for geospatial imagery, with PNG/JPEG inputs accepted for the prescribed public benchmark datasets.
+
 Build the frontend/web interface for SatQuery AI.
+
 Allow users to upload one or more satellite images.
+
 Allow users to enter natural-language queries.
+
 Display textual answers, confidence, visual outputs, and execution summaries.
+
 Handle integration of all modules into one working application.
+
 Keep the final application stable and ready for demonstration.
+
 Shared Responsibilities
 
 All team members should:
 
 Work mainly inside their assigned folders.
+
 Create and work on their own Git branch.
+
 Pull the latest changes before starting work.
+
 Avoid modifying another person's module without informing them.
+
 Add only relevant files when committing.
+
 Keep commits focused and meaningful.
+
 Use the common root requirements.txt.
+
 Inform the team before adding new dependencies.
+
 Do not push large datasets or model files to GitHub.
+
 Keep shared folders (outputs/, tests/, and docs/) organized.
-Follow the common input/output contract for easier backend and frontend integration
+
+Follow the common input/output contract for easier backend and frontend integration.
 
 SATQUERY AI – TEAM DEVELOPMENT RULES
 
 1. GENERAL RULE
+
 Each team member should primarily work only inside their assigned module/folder.
-gitkeep of each folder has number according to below(1-6)
+
+gitkeep of each folder has number according to below (1-6)
+
 Person 1:
+
 modules/model_adaptation/
 data/bigearthnet/
 models/adaptation/
 
 Person 2:
+
 modules/single_image/
 data/vrsbench/
 data/rsvqa/
 models/single_image/
 
 Person 3:
+
 modules/change_analysis/
 data/cdvqa/
 models/change_analysis/
 
 Person 4:
+
 modules/multimodal/
 data/optical_sar/
 models/multimodal/
 
 Person 5:
+
 agent/
 
 Person 6:
+
 backend/
 uploads/
 frontend/
 
 Shared folders:
+
 outputs/
 tests/
 docs/
 
 2. DO NOT MODIFY ANOTHER PERSON'S MODULE
+
 Do not directly modify files inside another person's assigned module unless:
 
-* Other Person has been informed.
-* The change is necessary for integration.
-* The team agrees on the change.
+Other Person has been informed.
+
+The change is necessary for integration.
+
+The team agrees on the change.
 
 3. CREATE YOUR OWN BRANCH
 
@@ -179,7 +256,7 @@ feature/model-adaptation
 feature/single-image
 feature/change-analysis
 feature/multimodal
-feature/backend-agent
+feature/agent
 feature/frontend
 
 Before starting work:
@@ -189,58 +266,90 @@ git pull origin main
 git checkout -b feature/your-module
 
 4. BEFORE PUSHING
+
 Always check your changes:
+
 git status
+
 Add only the files related to your work:
+
 git add path/to/your/files
+
 Do NOT blindly use:
+
 git add .
+
 unless you are sure that no unrelated files are being added.
 
 5. COMMIT RULES
+
 Keep commits focused on one logical change.
 
 6. PULL BEFORE STARTING
+
 Before starting new work:
+
 git checkout main
 git pull origin main
+
 Then update your branch with the latest changes if needed.
+
 Do not overwrite newer work from other team members.
 
 7. DO NOT PUSH LARGE DATASETS OR MODEL FILES
+
 Do not remove .gitignore rules without team discussion.
 
 8. REQUIREMENTS RULE
+
 All team members should use the common root requirements.txt.
 
 Setup:
+
 python -m venv .venv
+
 Activate the environment and install:
+
 pip install -r requirements.txt
+
 If your module requires a new package:
+
 1. Inform the team.
+
 2. Add the required package to requirements.txt.
+
 3. Avoid adding unnecessary packages.
+
 4. Make sure existing functionality is not broken.
+
+5. COMMON INPUT/OUTPUT CONTRACT
 
 Input:
 
-* Images
-* Natural-language query
-* Metadata, if required
+Images
+
+Natural-language query
+
+Metadata, if required
 
 Output:
 
-* success status
-* textual answer/result
-* confidence, if available
-* visual output path/data, if applicable
-* model/task metadata
-* error message, if execution fails
+success status
+
+textual answer/result
+
+confidence, if available
+
+visual output path/data, if applicable
+
+model/task metadata
+
+error message, if execution fails
 
 Do not change the shared input/output contract without informing the backend and frontend members.
 
 10. SHARED FOLDERS
+
 The following folders are shared:
 
 outputs/
@@ -249,17 +358,22 @@ docs/
 
 When modifying shared folders:
 
-* Do not delete another person's files.
-* Use clear filenames.
-* Avoid changing shared structures without informing the team.
-* Keep outputs organized by module or task when necessary.
+Do not delete another person's files.
+
+Use clear filenames.
+
+Avoid changing shared structures without informing the team.
+
+Keep outputs organized by module or task when necessary.
 
 11. BACKEND AND FRONTEND INTEGRATION
 
 The backend member should define API contracts clearly.
+
 The frontend should not depend on undocumented API behavior.
 
 12. PULL REQUEST / MERGE RULE
 
 Do not merge major changes directly into main without checking them.
+
 Main should always remain as stable as possible.
