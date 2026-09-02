@@ -2,14 +2,31 @@
 __pycache__/
 *.pyc
 
+.env
 
-.envdata/bigearthnet/*
-!data/bigearthnet/README.md
-models/adaptation/checkpoints/
-*.parquet
-*.lmdb
 data/bigearthnet/*
 !data/bigearthnet/README.md
+
+data/rsvqa/*
+!data/rsvqa/README.md
+
+data/vrsbench/*
+!data/vrsbench/README.md
+
+data/cdvqa/*
+!data/cdvqa/README.md
+
+data/optical_sar/*
+!data/optical_sar/README.md
+
 models/adaptation/checkpoints/
+models/single_image/checkpoints/
+models/change_analysis/checkpoints/
+models/multimodal/checkpoints/
+
 *.parquet
 *.lmdb
+*.pt
+*.pth
+*.ckpt
+*.safetensors
