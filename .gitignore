@@ -3,4 +3,13 @@ __pycache__/
 *.pyc
 
 
-.env
+.envdata/bigearthnet/*
+!data/bigearthnet/README.md
+models/adaptation/checkpoints/
+*.parquet
+*.lmdb
+data/bigearthnet/*
+!data/bigearthnet/README.md
+models/adaptation/checkpoints/
+*.parquet
+*.lmdb
