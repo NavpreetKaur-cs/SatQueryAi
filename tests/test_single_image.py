@@ -1,4 +1,12 @@
 from modules.single_image.service import analyze_single_image
+from modules.single_image.service import get_requested_task
+
+def test_identifies_caption_requests():
+    assert get_requested_task("Describe this satellite image") == "caption"
+
+
+def test_identifies_vqa_requests():
+    assert get_requested_task("Is there a water body?") == "vqa"
 
 
 def test_requires_an_image_path():

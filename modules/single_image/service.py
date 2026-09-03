@@ -1,5 +1,16 @@
 from pathlib import Path
 
+CAPTION_WORDS = ("describe", "caption", "what is visible", "what do you see")
+
+
+def get_requested_task(query):
+    text = query.lower()
+
+    if any(word in text for word in CAPTION_WORDS):
+        return "caption"
+
+    return "vqa"
+
 
 def analyze_single_image(image_path, query):
     if not image_path:
@@ -29,6 +40,7 @@ def analyze_single_image(image_path, query):
             "success": False,
             "answer": "",
             "error": "Please provide a question about the image.",
+            "requested_task": get_requested_task(query),
         }
     return {
         "success": False,
