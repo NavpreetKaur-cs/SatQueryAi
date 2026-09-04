@@ -1,4 +1,15 @@
+from pathlib import Path
 from typing import Any, Dict
+
+
+_REMOTE_SENSING_VLM = None
+_ADAPTER_PATH = (
+    Path(__file__).resolve().parent.parent
+    / "models"
+    / "adaptation"
+    / "checkpoints"
+    / "best"
+)
 
 
 def _image_label(image: Any) -> str:
@@ -17,17 +28,21 @@ def _image_label(image: Any) -> str:
 
 
 def single_image_tool(image, query, metadata=None):
-    return {
-        "success": True,
-        "answer": "Mock single-image analysis.",
-        "confidence": 0.80,
-        "model": "single-image-baseline",
-        "visual_output": None,
-        "metadata": {
-            "module": "single_image",
-            "image": _image_label(image),
-        },
-    }
+    """Run Person 1's adapted VLM through the agent tool contract."""
+    global _REMOTE_SENSING_VLM
+
+    from modules.model_adaptation.infer import RemoteSensingVLM
+
+    if _REMOTE_SENSING_VLM is None:
+        _REMOTE_SENSING_VLM = RemoteSensingVLM(
+            adapter_path=_ADAPTER_PATH
+        )
+
+    image_input = image.path if hasattr(image, "path") else image
+    return _REMOTE_SENSING_VLM.infer(
+        image=image_input,
+        query=query,
+    )
 
 
 def change_analysis_tool(image1, image2, query, metadata=None):
