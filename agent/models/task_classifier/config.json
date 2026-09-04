@@ -7,5 +7,5 @@
     ],
     "classifier": "LogisticRegression",
     "max_iter": 2000,
-    "accuracy": 0.8888888888888888
+    "accuracy": 0.9830508474576272
 }
