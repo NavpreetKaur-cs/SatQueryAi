@@ -1,5 +1,7 @@
 from typing import Any, Dict
 
+from modules.single_image.service import analyze_single_image
+
 
 def _image_label(image: Any) -> str:
     if image is None:
@@ -12,22 +14,17 @@ def _image_label(image: Any) -> str:
 
 
 # ============================================================
-# MOCK SPECIALIST TOOLS
+# SPECIALIST TOOLS
 # ============================================================
 
 
 def single_image_tool(image, query, metadata=None):
-    return {
-        "success": True,
-        "answer": "Mock single-image analysis.",
-        "confidence": 0.80,
-        "model": "single-image-baseline",
-        "visual_output": None,
-        "metadata": {
-            "module": "single_image",
-            "image": _image_label(image),
-        },
+    result = analyze_single_image(_image_label(image), query)
+    result["metadata"] = {
+        **result.get("metadata", {}),
+        "request_metadata": metadata or {},
     }
+    return result
 
 
 def change_analysis_tool(image1, image2, query, metadata=None):
