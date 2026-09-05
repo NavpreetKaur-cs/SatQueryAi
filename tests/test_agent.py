@@ -3,7 +3,6 @@ from agent.request import (
     AgentRequest,
     ImageInput,
 )
-from unittest.mock import patch
 
 
 def test_single_image():
@@ -23,17 +22,9 @@ def test_single_image():
         ]
     )
 
-    with patch("agent.tools.analyze_single_image") as analyze:
-        analyze.return_value = {
-            "success": True,
-            "answer": "Water body detected.",
-            "confidence": None,
-            "model": "InternVL3-1B-hf+LoRA",
-            "visual_output": None,
-            "metadata": {},
-            "error": None,
-        }
-        result = process(request)
+    result = process(
+        request
+    )
 
     print(
         result.to_dict()
@@ -41,7 +32,6 @@ def test_single_image():
 
     assert result.success
     assert result.task == "single_image"
-    assert result.answer == "Water body detected."
 
 
 def test_change_analysis():

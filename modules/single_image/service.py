@@ -1,5 +1,4 @@
 from pathlib import Path
-from functools import lru_cache
 
 CAPTION_WORDS = ("describe", "caption", "what is visible", "what do you see")
 
@@ -11,14 +10,6 @@ def get_requested_task(query):
         return "caption"
 
     return "vqa"
-
-
-@lru_cache(maxsize=1)
-def _get_vlm():
-    """Create the adapted VLM once and reuse it across image requests."""
-    from modules.model_adaptation.infer import RemoteSensingVLM
-
-    return RemoteSensingVLM()
 
 
 def _failure(error, image_path, query):
@@ -52,27 +43,8 @@ def analyze_single_image(image_path, query):
     if not query:
         return _failure("Please provide a question about the image.", image_path, query)
 
-    try:
-        result = _get_vlm().infer(image=image_path, query=query)
-    except Exception as exc:
-        return _failure(f"Remote-sensing inference failed: {exc}", image_path, query)
-
-    if not isinstance(result, dict):
-        return _failure("Remote-sensing model returned an invalid response.", image_path, query)
-
-    # The adaptation module owns the shared output contract.  Add service context
-    # without changing the model's answer, confidence, or visual output.
-    result.setdefault("success", False)
-    result.setdefault("answer", "")
-    result.setdefault("confidence", None)
-    result.setdefault("visual_output", None)
-    result.setdefault("model", None)
-    result.setdefault("error", None)
-    result["metadata"] = {
-        **result.get("metadata", {}),
-        "module": "single_image",
-        "image_path": str(image_path),
-        "query": query,
-        "requested_task": get_requested_task(query),
-    }
-    return result
+    return _failure(
+        "Single-image model inference has not been connected yet.",
+        image_path,
+        query,
+    )
