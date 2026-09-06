@@ -30,3 +30,5 @@ models/multimodal/checkpoints/
 *.pth
 *.ckpt
 *.safetensors
+data/optical_sar/
+models/multimodal/checkpoints/*.npz

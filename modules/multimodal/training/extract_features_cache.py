@@ -73,7 +73,7 @@ def main():
     rows = load_dataset_index(index_path)
     print(f"Loaded {len(rows)} labeled pairs from {index_path}")
 
-    extractor = MultimodalFeatureExtractor(optical_channels=3, sar_channels=1, pretrained=False)
+    extractor = MultimodalFeatureExtractor(optical_channels=3, sar_channels=1, pretrained=True)
     fusion = MultimodalFusion(strategy="concat", feature_dim=512)
 
     fused_vectors = []
