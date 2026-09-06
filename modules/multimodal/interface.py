@@ -101,12 +101,16 @@ def _get_pipeline_components():
     global _feature_extractor, _fusion, _task_head
     if _feature_extractor is None:
         _feature_extractor = MultimodalFeatureExtractor(
-            optical_channels=3, sar_channels=1, pretrained=False
+            optical_channels=3, sar_channels=1, pretrained=True
         )
     if _fusion is None:
         _fusion = MultimodalFusion(strategy="concat", feature_dim=512)
     if _task_head is None:
         _task_head = TaskHead(feature_dim=512)
+        checkpoint_path = "models/multimodal/checkpoints/land_cover_head.pt"
+        if os.path.exists(checkpoint_path):
+            _task_head.load_weights(checkpoint_path)
+        # else: stays untrained -- module honestly reports "not yet trained"
     return _feature_extractor, _fusion, _task_head
 
 
@@ -189,7 +193,7 @@ def multimodal_tool(
             extractor = MultimodalFeatureExtractor(
                 optical_channels=optical_arr.shape[0],
                 sar_channels=sar_arr.shape[0],
-                pretrained=False,
+                pretrained=True,
             )
 
         optical_feat, sar_feat = extractor.extract(optical_arr, sar_arr)
