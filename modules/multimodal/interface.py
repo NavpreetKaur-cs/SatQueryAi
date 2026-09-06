@@ -23,6 +23,7 @@ from .preprocessing import load_and_validate_pair, CoRegistrationError
 from .feature_extraction import MultimodalFeatureExtractor
 from .fusion import MultimodalFusion
 from .task_head import TaskHead
+from .visualize import generate_overlay
 
 
 # ============================================================
@@ -81,6 +82,10 @@ def _validate_image_input(image: Any, label: str) -> Optional[str]:
 
     return None
 
+
+# ============================================================
+# Pipeline components (lazily initialized singletons)
+# ============================================================
 # Built once and reused across calls, since MultimodalFeatureExtractor
 # loads CNN backbones — recreating it per-request would be slow and
 # wasteful. If this module is ever loaded in a multi-process server
@@ -104,6 +109,10 @@ def _get_pipeline_components():
         _task_head = TaskHead(feature_dim=512)
     return _feature_extractor, _fusion, _task_head
 
+
+# ============================================================
+# Main entry point (matches agent/tools.py::multimodal_tool contract)
+# ============================================================
 
 def multimodal_tool(
     optical_image: Any,
@@ -142,6 +151,7 @@ def multimodal_tool(
     if metadata:
         base_metadata["input_metadata"] = metadata
 
+    # --- Step 1: validate inputs before doing anything else ---
     optical_error = _validate_image_input(optical_image, "optical")
     if optical_error:
         return _failure(optical_error, base_metadata)
@@ -153,6 +163,7 @@ def multimodal_tool(
     if not query or not query.strip():
         return _failure("Query is empty.", base_metadata)
 
+    # --- Step 2: run the real pipeline ---
     optical_path = _get_path(optical_image)
     sar_path = _get_path(sar_image)
 
@@ -167,6 +178,10 @@ def multimodal_tool(
     try:
         extractor, fusion, task_head = _get_pipeline_components()
 
+        # feature_extraction expects channel counts matching the loaded
+        # arrays; rebuild the extractor if this pair's channel counts
+        # differ from what's cached (e.g. multi-band SAR, or optical
+        # imagery with more than 3 bands).
         if (
             extractor.optical_backbone[0].in_channels != optical_arr.shape[0]
             or extractor.sar_backbone[0].in_channels != sar_arr.shape[0]
@@ -185,12 +200,34 @@ def multimodal_tool(
 
     base_metadata["category"] = task_result.category
 
+    # Generate a visual overlay so the agent/frontend has something to
+    # show alongside the text answer. present=None when confidence is
+    # unavailable (untrained model or unrecognized category) - the
+    # overlay honestly reflects that instead of guessing.
+    present = (
+        task_result.confidence >= 0.5
+        if task_result.confidence is not None
+        else None
+    )
+    visual_output = None
+    try:
+        output_path = os.path.join(
+            "outputs", "multimodal", f"overlay_{os.getpid()}_{id(query)}.png"
+        )
+        visual_output = generate_overlay(
+            optical_arr, task_result.category, present, task_result.confidence, output_path
+        )
+    except Exception as e:
+        # Visualization is a nice-to-have; a failure here should not
+        # take down an otherwise-successful text answer.
+        base_metadata["visualization_error"] = str(e)
+
     return {
         "success": True,
         "answer": task_result.answer,
         "confidence": task_result.confidence,
         "model": "multimodal-v0" + ("-untrained" if not task_head.is_trained else ""),
-        "visual_output": None,  # TODO: wire up visualize.py once it exists
+        "visual_output": visual_output,
         "metadata": base_metadata,
     }
 
