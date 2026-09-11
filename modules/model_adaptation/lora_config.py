@@ -8,7 +8,7 @@ from transformers import AutoModelForImageTextToText
 
 def get_lora_model():
     model = AutoModelForImageTextToText.from_pretrained(
-        "OpenGVLab/InternVL3-1B-hf", torch_dtype=torch.float32
+        "OpenGVLab/InternVL3-1B-hf", torch_dtype=torch.bfloat16
     )
 
     lora_config = LoraConfig(

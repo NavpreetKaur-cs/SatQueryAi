@@ -1,0 +1,58 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background-color: #0D1113;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #3ED9B0;
+  color: #0D1113;
+}
+
+/* thin, functional scrollbars — this app has real data-dense panels */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #141A1D;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B353A;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3D4A50;
+}
+
+:focus-visible {
+  outline: 2px solid #3ED9B0;
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Leaflet overrides so the map reads as an instrument, not a webmap */
+.leaflet-container {
+  background: #0A0D0F;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.sq-region-box {
+  stroke-dasharray: 4 3;
+}

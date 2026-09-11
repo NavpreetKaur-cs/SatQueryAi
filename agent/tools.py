@@ -17,17 +17,11 @@ def _image_label(image: Any) -> str:
 
 
 def single_image_tool(image, query, metadata=None):
-    return {
-        "success": True,
-        "answer": "Mock single-image analysis.",
-        "confidence": 0.80,
-        "model": "single-image-baseline",
-        "visual_output": None,
-        "metadata": {
-            "module": "single_image",
-            "image": _image_label(image),
-        },
-    }
+    """Run the adapted remote-sensing VLM through the agent contract."""
+    from modules.single_image.service import analyze_single_image
+
+    image_input = image.path if hasattr(image, "path") else image
+    return analyze_single_image(image_input, query)
 
 
 def change_analysis_tool(image1, image2, query, metadata=None):

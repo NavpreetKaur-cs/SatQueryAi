@@ -1,148 +1,950 @@
 [
-    {
-        "query": "What objects are visible in this satellite image?",
-        "task": "single_image"
-    },
-    {
-        "query": "Describe the land cover in this image.",
-        "task": "single_image"
-    },
-    {
-        "query": "What is shown in this remote sensing image?",
-        "task": "single_image"
-    },
-    {
-        "query": "Identify the major features visible in this satellite image.",
-        "task": "single_image"
-    },
-    {
-        "query": "Is there a water body in this image?",
-        "task": "single_image"
-    },
-    {
-        "query": "Are there buildings visible in this image?",
-        "task": "single_image"
-    },
-    {
-        "query": "Describe the scene shown in the satellite image.",
-        "task": "single_image"
-    },
-    {
-        "query": "What type of land cover is present?",
-        "task": "single_image"
-    },
-    {
-        "query": "Locate the water body in this image.",
-        "task": "single_image"
-    },
-    {
-        "query": "Highlight the region containing buildings.",
-        "task": "single_image"
-    },
-    {
-        "query": "What is the dominant land cover?",
-        "task": "single_image"
-    },
-    {
-        "query": "Give me a description of this satellite scene.",
-        "task": "single_image"
-    },
+  {
+    "query": "What objects are visible in this satellite image?",
+    "task": "single_image"
+  },
+  {
+    "query": "Describe the land cover in this image.",
+    "task": "single_image"
+  },
+  {
+    "query": "What is shown in this remote sensing image?",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify the major features visible in this satellite image.",
+    "task": "single_image"
+  },
+  {
+    "query": "Is there a water body in this image?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there buildings visible in this image?",
+    "task": "single_image"
+  },
+  {
+    "query": "Describe the scene shown in the satellite image.",
+    "task": "single_image"
+  },
+  {
+    "query": "What type of land cover is present?",
+    "task": "single_image"
+  },
+  {
+    "query": "Locate the water body in this image.",
+    "task": "single_image"
+  },
+  {
+    "query": "Highlight the region containing buildings.",
+    "task": "single_image"
+  },
+  {
+    "query": "What is the dominant land cover?",
+    "task": "single_image"
+  },
+  {
+    "query": "Give me a description of this satellite scene.",
+    "task": "single_image"
+  },
+  {
+    "query": "What types of objects can be identified in this scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify any roads in the image?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there agricultural fields visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where are the buildings located?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify the main geographical features?",
+    "task": "single_image"
+  },
+  {
+    "query": "Is the area mostly urban or rural?",
+    "task": "single_image"
+  },
+  {
+    "query": "What kind of terrain is visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify areas covered by vegetation.",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there any roads or highways in the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where is the vegetation concentrated?",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify the water features in this image.",
+    "task": "single_image"
+  },
+  {
+    "query": "How many major buildings are visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "What land-use patterns can you observe?",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify the urban areas in this image.",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you locate the roads?",
+    "task": "single_image"
+  },
+  {
+    "query": "What features dominate the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does this image contain forested areas?",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify any visible infrastructure.",
+    "task": "single_image"
+  },
+  {
+    "query": "What is the primary type of surface visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Describe the geographic area shown.",
+    "task": "single_image"
+  },
+  {
+    "query": "What can you observe in this remote sensing scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify the different land-cover types.",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you find any lakes or rivers?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there signs of human settlement?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where are the agricultural areas?",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify prominent objects in the satellite image.",
+    "task": "single_image"
+  },
+  {
+    "query": "What does the landscape look like?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you classify the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which land-cover category is most prominent?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there urban structures visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Locate areas with dense vegetation.",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify roads, buildings, and water features.",
+    "task": "single_image"
+  },
+  {
+    "query": "What types of infrastructure are visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Is this region mainly covered by vegetation?",
+    "task": "single_image"
+  },
+  {
+    "query": "Describe the spatial arrangement of the main features.",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify settlements in the image?",
+    "task": "single_image"
+  },
+  {
+    "query": "What are the main objects present in the scene?",
+    "task": "single_image"
+  },
 
-    {
-        "query": "What changed between these two satellite images?",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Compare these two images and identify the differences.",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Has the built-up area increased?",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Has vegetation decreased between the two dates?",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Identify changes between the before and after images.",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Where did the changes occur?",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Show me the areas that changed over time.",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Did the water coverage increase or decrease?",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Compare the land cover at the two different times.",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Has urban expansion occurred between these observations?",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Describe the differences between the two satellite observations.",
-        "task": "change_analysis"
-    },
-    {
-        "query": "Determine whether anything changed between these dates.",
-        "task": "change_analysis"
-    },
+  {
+    "query": "What changed between these two satellite images?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Compare these two images and identify the differences.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the built-up area increased?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has vegetation decreased between the two dates?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Identify changes between the before and after images.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Where did the changes occur?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Show me the areas that changed over time.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the water coverage increase or decrease?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Compare the land cover at the two different times.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has urban expansion occurred between these observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Describe the differences between the two satellite observations.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Determine whether anything changed between these dates.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did new buildings appear in the later image?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the city expanded between the two observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was any forest converted to another land-cover type?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the road network change between the images?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Are there newly constructed structures?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did agricultural land decrease over time?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the shoreline changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the size of the water body change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which parts of the scene experienced the most change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was there any deforestation between the two dates?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did vegetation expand in any region?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Were any buildings removed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Identify newly developed urban areas.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the amount of farmland changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Compare the vegetation patterns in both images.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the forest cover become smaller?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Identify regions that changed from vegetation to built-up land.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has construction activity occurred between the two observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any roads appear in the newer image?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Compare the urban extent at the two different times.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which features are different between the images?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the landscape changed significantly?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Identify areas of land-cover transition.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the number of visible buildings increase?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was there a loss of vegetation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any new water features appear?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Compare the built-up regions across the two dates.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Where has urban development taken place?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the distribution of land cover change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Identify changes caused by development.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any natural areas become developed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Compare the water extent between the two images.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has vegetation been replaced by buildings?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What new features are visible in the second image?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What features disappeared between the observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which areas remained unchanged?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the spatial distribution of buildings change?",
+    "task": "change_analysis"
+  },
 
-    {
-        "query": "Use the optical and SAR images together.",
-        "task": "multimodal"
-    },
-    {
-        "query": "Analyze the optical and radar imagery jointly.",
-        "task": "multimodal"
-    },
-    {
-        "query": "Use both optical and SAR data to identify built-up areas.",
-        "task": "multimodal"
-    },
-    {
-        "query": "Combine information from the optical and SAR images.",
-        "task": "multimodal"
-    },
-    {
-        "query": "What can be identified using both SAR and optical imagery?",
-        "task": "multimodal"
-    },
-    {
-        "query": "Use the radar image together with the optical image to identify water.",
-        "task": "multimodal"
-    },
-    {
-        "query": "Perform cross-modal analysis using these two satellite images.",
-        "task": "multimodal"
-    },
-    {
-        "query": "Analyze these optical and radar observations together.",
-        "task": "multimodal"
-    },
-    {
-        "query": "Identify land-cover information using both sensors.",
-        "task": "multimodal"
-    },
-    {
-        "query": "Fuse the SAR and multispectral images.",
-        "task": "multimodal"
-    },
-    {
-        "query": "What additional information can SAR provide when combined with optical imagery?",
-        "task": "multimodal"
-    },
-    {
-        "query": "Use both modalities to analyze this geographic area.",
-        "task": "multimodal"
-    }
+  {
+    "query": "Use the optical and SAR images together.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze the optical and radar imagery jointly.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use both optical and SAR data to identify built-up areas.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine information from the optical and SAR images.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What can be identified using both SAR and optical imagery?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the radar image together with the optical image to identify water.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Perform cross-modal analysis using these two satellite images.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze these optical and radar observations together.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Identify land-cover information using both sensors.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Fuse the SAR and multispectral images.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What additional information can SAR provide when combined with optical imagery?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use both modalities to analyze this geographic area.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine radar and multispectral information to analyze the scene.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use both sensors to identify buildings.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze the scene using the available optical and radar data.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which areas are identifiable from both sensor types?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use SAR information to complement the optical imagery.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine the two sensor observations for land-cover analysis.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use radar and optical observations to identify urban regions.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze water features using both satellite modalities.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Fuse information from the radar and optical observations.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Determine land-cover characteristics using both sensors.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use multispectral and SAR imagery jointly.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze the same geographic area using optical and radar data.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What does the combination of optical and SAR data reveal?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Identify urban structures using both radar and optical imagery.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can both sensors be used to identify vegetation?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine optical and radar information to classify the area.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use both observations to analyze the land surface.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Compare information from the optical and SAR sensors for this area.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use radar data to supplement what is visible in the optical image.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Perform joint analysis of multispectral and SAR imagery.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use both sensor types to detect built-up regions.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Identify water using complementary radar and optical information.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze vegetation using both optical and SAR observations.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Fuse the two satellite modalities for scene understanding.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use optical and radar data together for geographic analysis.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What information is available when both sensors are analyzed?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine SAR and optical imagery to improve scene interpretation.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Identify land features using both radar and optical observations.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze urban land cover using both available sensors.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the radar and multispectral images jointly to analyze the area.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the two sensor types provide complementary information?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine the available satellite observations for a more complete analysis.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use optical imagery and SAR together to characterize the landscape.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze built-up regions using complementary satellite sensors.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Fuse radar and optical features for land-cover identification.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use both image modalities to understand this geographic region.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What can you see in this satellite scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Give an overview of the area shown here.",
+    "task": "single_image"
+  },
+  {
+    "query": "What are the most noticeable features in this image?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you tell what type of area this is?",
+    "task": "single_image"
+  },
+  {
+    "query": "What is the scene mainly composed of?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there signs of development in this image?",
+    "task": "single_image"
+  },
+  {
+    "query": "What kinds of surfaces are visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify natural features in the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "What human-made structures can you find?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the scene contain any settlements?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify any large open areas?",
+    "task": "single_image"
+  },
+  {
+    "query": "What is the surrounding landscape like?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there visible signs of agriculture?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify areas of dense development?",
+    "task": "single_image"
+  },
+  {
+    "query": "What geographical characteristics are visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Describe the spatial layout of this area.",
+    "task": "single_image"
+  },
+  {
+    "query": "What major structures can be seen from above?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you distinguish between natural and built-up areas?",
+    "task": "single_image"
+  },
+  {
+    "query": "What types of vegetation are visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you locate any transportation infrastructure?",
+    "task": "single_image"
+  },
+  {
+    "query": "What is the most prominent feature of the image?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there any noticeable water features?",
+    "task": "single_image"
+  },
+  {
+    "query": "What land uses can be identified?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify residential or urban areas?",
+    "task": "single_image"
+  },
+  {
+    "query": "What patterns are visible across the landscape?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does this look like an urban environment?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify roads and other transportation routes?",
+    "task": "single_image"
+  },
+  {
+    "query": "What environmental features are visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which areas appear to be covered by crops or farmland?",
+    "task": "single_image"
+  },
+  {
+    "query": "What is the general character of this landscape?",
+    "task": "single_image"
+  },
+
+  {
+    "query": "Did anything significant happen between the two observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Does the second image show any major differences?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the appearance of the area change over time?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Is the newer observation different from the earlier one?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the city grow during this period?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has development increased between the two observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any previously undeveloped areas become urbanized?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Are there new structures in the later observation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any structures disappear over time?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the amount of green space changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did natural vegetation give way to development?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the extent of the urban area changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the landscape become more developed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was there any noticeable expansion of settlements?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did farmland turn into built-up land?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the amount of forest changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any water areas shrink over time?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any water areas expand between the observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the coastline moved between the two dates?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the distribution of vegetation change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Were there changes in the road infrastructure?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did construction occur in previously open areas?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which parts of the area changed the most?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can you identify newly developed regions?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any land-cover classes increase or decrease?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What became different in the newer image?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which features stayed stable across both observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the spatial pattern of development change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has human activity increased in the area?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What transformations occurred between the two images?",
+    "task": "change_analysis"
+  },
+
+  {
+    "query": "Analyze the two available sensor views together.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use information from both image sources.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can you combine the information from these images?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Interpret the area using both types of imagery.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the complementary information from the two images.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What can we learn by analyzing both observations together?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze the region using the different available sensors.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine the imagery to better understand the scene.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use both sources of satellite information for this analysis.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can you interpret this area using the two sensor views?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use complementary satellite observations to analyze the landscape.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze the scene using information from multiple sensors.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine the available imagery for a more complete interpretation.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the different observations together to understand the land surface.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the available imagery be interpreted jointly?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze this location using both types of satellite data.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What additional insight comes from using both images?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine the observations to identify features that may not be obvious in one image.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use multiple sensor observations to characterize the area.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze the land surface using the two available image types.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the two imagery sources complement each other?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use both image sources to interpret the geographic region.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine the sensor information to understand the scene.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Perform an integrated analysis using the available imagery.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the different satellite observations together.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze this scene using complementary sensor information.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What can be determined by combining these satellite images?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use all available sensor information to analyze the area.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Interpret the geographic area from multiple sensor perspectives.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Combine the different satellite observations for scene analysis.",
+    "task": "multimodal"
+  }
 ]

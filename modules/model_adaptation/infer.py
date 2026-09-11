@@ -14,7 +14,7 @@ from transformers import AutoProcessor, AutoModelForImageTextToText
 from peft import PeftModel
 
 MODEL_ID = "OpenGVLab/InternVL3-1B-hf"
-DEFAULT_ADAPTER_PATH = Path(__file__).parent.parent.parent / "models" / "adaptation" / "checkpoints" / "final"
+DEFAULT_ADAPTER_PATH = Path(__file__).parent.parent.parent / "models" / "adaptation" / "checkpoints" / "best"
 
 
 class RemoteSensingVLM:
