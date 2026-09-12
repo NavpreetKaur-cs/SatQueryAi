@@ -946,5 +946,1486 @@
   {
     "query": "Combine the different satellite observations for scene analysis.",
     "task": "multimodal"
+  },
+  {
+    "query": "What lies beneath the cloud-free portion of the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the landscape show evidence of organized human settlement?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which parts of the image appear to have been modified by people?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you distinguish open land from developed land?",
+    "task": "single_image"
+  },
+  {
+    "query": "What appears to be the most densely occupied part of the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the pattern of vegetation suggest agricultural activity?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are the visible fields regular or irregular in shape?",
+    "task": "single_image"
+  },
+  {
+    "query": "What type of settlement pattern is visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you distinguish natural water from man-made water features?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which features appear to be linear structures?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the image contain a mixture of urban and agricultural land?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where does vegetation transition into developed land?",
+    "task": "single_image"
+  },
+  {
+    "query": "What appears to be the dominant human activity in this area?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there clusters of structures or isolated structures?",
+    "task": "single_image"
+  },
+  {
+    "query": "What land-cover boundaries are visually apparent?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the scene contain fragmented patches of vegetation?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify any large-scale transportation corridors?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which regions appear densely vegetated compared with their surroundings?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the arrangement of buildings suggest a planned settlement?",
+    "task": "single_image"
+  },
+  {
+    "query": "What is the relationship between the developed areas and open land?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify areas where bare soil is exposed?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there visible patterns associated with irrigation or farming?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which physical features provide the strongest clues about the landscape?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the scene appear fragmented by roads or other infrastructure?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you separate cultivated land from natural vegetation?",
+    "task": "single_image"
+  },
+
+  {
+    "query": "How has the relationship between vegetation and built-up land changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did open land become more fragmented in the later observation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the boundary between urban and rural areas shifted?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did previously continuous vegetation become fragmented?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Are there signs that development moved outward from the existing settlement?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the pattern of roads become more dense over time?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the landscape become more homogeneous or more fragmented?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did agricultural fields change their spatial arrangement?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Were previously connected green areas separated by new development?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did development occur mainly near existing roads?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the boundary of the water feature moved?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did new linear infrastructure appear in the later image?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the distribution of bare land changed between the observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did vegetation disappear specifically around developed areas?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which land-cover transition appears to be most significant?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the settlement pattern become denser?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the edge of the urban area expanded into farmland?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any previously open region become occupied by structures?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Are changes concentrated in one part of the scene or spread throughout it?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the relative proportions of natural and developed land change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the connectivity of vegetated regions changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the shape of the water boundary become more irregular?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can you identify subtle changes that are not simply new buildings?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did human-modified areas expand into previously natural regions?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which features remained spatially consistent across both dates?",
+    "task": "change_analysis"
+  },
+
+  {
+    "query": "If the optical image is unclear, can SAR help interpret the structures?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Do the two sensors provide consistent evidence for the same land-cover classes?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which features become easier to interpret when both images are considered?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can radar information distinguish developed surfaces from surrounding vegetation?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Does the SAR observation support what is visible in the optical image?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the radar response to clarify ambiguous features in the optical image.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Are there features visible in one modality but less apparent in the other?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What does SAR reveal that cannot be confidently determined from the optical image alone?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can both observations help distinguish water from dark land surfaces?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the complementary sensor information to interpret uncertain land-cover boundaries.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Does the radar imagery provide additional evidence of urban structures?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can optical and SAR information together reduce ambiguity in the scene?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which interpretation is supported by both the spectral and radar information?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use differences between the sensor responses to distinguish surface types.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the two modalities jointly identify areas with similar visual appearance but different surface properties?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze features that are difficult to classify using optical imagery alone.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Does the SAR image provide evidence of structures hidden by visual similarity in the optical image?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use spectral appearance and radar backscatter together to interpret the landscape.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the combination of sensors distinguish built surfaces from exposed soil?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What additional confidence can be obtained by analyzing both modalities?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Identify features whose interpretation changes when SAR information is considered.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can radar complement the optical observation where vegetation or lighting makes interpretation difficult?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Compare the evidence provided by spectral reflectance and radar response.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use both observations to distinguish natural surfaces from anthropogenic surfaces.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What surface characteristics are apparent only when the two sensor types are interpreted together?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What kind of environment is represented here?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which parts of the scene appear natural?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which parts appear to be influenced by human activity?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the area have a continuous or fragmented vegetation pattern?",
+    "task": "single_image"
+  },
+  {
+    "query": "What patterns suggest intensive land use?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you distinguish cultivated areas from unused land?",
+    "task": "single_image"
+  },
+  {
+    "query": "What appears to be the most developed portion of the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are structures concentrated in particular parts of the image?",
+    "task": "single_image"
+  },
+  {
+    "query": "How are the settlements distributed across the landscape?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the road pattern indicate a dense settlement?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there clearly defined boundaries between different land surfaces?",
+    "task": "single_image"
+  },
+  {
+    "query": "What appears to separate the developed and undeveloped areas?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there patches of exposed ground among the vegetation?",
+    "task": "single_image"
+  },
+  {
+    "query": "What features indicate that this area may be agricultural?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify any large continuous green regions?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where are the most concentrated human-made features?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the landscape contain both natural and artificial features?",
+    "task": "single_image"
+  },
+  {
+    "query": "What appears to be the least disturbed part of the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which areas look most suitable for cultivation?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify the major zones within the image?",
+    "task": "single_image"
+  },
+  {
+    "query": "How is land distributed between vegetation, development, and open surfaces?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there any distinctive geometric patterns in the landscape?",
+    "task": "single_image"
+  },
+  {
+    "query": "What does the arrangement of the visible features suggest about land use?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the area appear densely populated or sparsely settled?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which features are easiest to distinguish from above?",
+    "task": "single_image"
+  },
+
+  {
+    "query": "Was the previously open land developed later?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the relationship between roads and settlements change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did green areas become isolated from one another?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was development concentrated along the existing transportation network?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did previously continuous farmland become divided?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the boundary between vegetation and development moved?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the dominant surface type remain the same?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was the newer observation more densely built up?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did natural land become increasingly fragmented?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the distribution of settlements become more dispersed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did structures appear in areas that were previously vegetated?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Were any previously connected roads extended?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the shape of cultivated parcels change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the proportion of developed land increased relative to vegetation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did open surfaces become covered by vegetation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was there evidence of land reclamation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the apparent density of structures increase?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the boundary of the settlement moved toward the surrounding countryside?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any previously isolated developed patches merge?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did vegetation recover in areas that were previously disturbed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the pattern of land use become more urbanized?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Were new developments established away from the existing built-up area?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the landscape lose some of its natural character?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the amount of undeveloped land decline?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Are changes more apparent in the center or at the edges of the settlement?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any previously visible feature become absent later?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was the transformation gradual or concentrated in particular areas?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did land-use boundaries remain stable?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the spatial organization of the area changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the newer scene contain a greater variety of land-cover types?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which previously natural areas appear to have been disturbed?",
+    "task": "change_analysis"
+  },
+
+  {
+    "query": "Would the radar view help resolve uncertainty in the visible surfaces?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Do both observations indicate the same type of surface?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which interpretation is strengthened when the two views are considered together?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the second sensor help distinguish two visually similar regions?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Does the radar response support the suspected built-up areas?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can spectral and radar characteristics be used together to classify the surface?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which regions have consistent evidence across both observations?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Are there surfaces that look similar optically but behave differently in radar?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the second observation to resolve ambiguous features in the first.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the radar information help identify structures obscured in the optical view?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which land-cover interpretation is supported by both sensor responses?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the complementary imagery distinguish vegetation from other dark surfaces?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Does the radar view reveal additional structure within the developed areas?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the two sensor perspectives to identify uncertain regions.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Are the apparent water regions confirmed by the other sensor?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can both datasets help separate bare ground from constructed surfaces?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which features have complementary signatures across the two images?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Does combining the imagery reveal boundaries that are difficult to see otherwise?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can radar provide useful evidence where optical contrast is weak?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Analyze the regions where the two sensor observations provide different clues.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What additional surface information is obtained from the radar observation?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the two datasets jointly improve identification of urban surfaces?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the complementary signatures to distinguish different land-cover classes.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which areas require information from both observations for confident interpretation?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the two views help distinguish man-made surfaces from natural ones?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Interpret the regions where optical appearance alone is inconclusive.",
+    "task": "multimodal"
+  },
+
+  {
+    "query": "What does this area look like from above?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you tell whether this is primarily natural or developed?",
+    "task": "single_image"
+  },
+  {
+    "query": "What are the strongest visual indicators of human presence?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where are the largest uninterrupted surfaces?",
+    "task": "single_image"
+  },
+  {
+    "query": "What spatial patterns stand out in the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Did the newer image preserve the same overall landscape structure?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the balance between natural and human-made surfaces shifted?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did previously isolated settlements become connected?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the landscape become more intensively used?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can both sensor views help explain why certain regions appear different?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the complementary observations to make a more reliable land-cover assessment.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What does each sensor contribute to interpreting the same surface?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can combining the two views reveal features hidden by the limitations of one sensor?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Determine whether the two sensor observations agree about the dominant land cover.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What is visible across the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Give me a quick interpretation of this area.",
+    "task": "single_image"
+  },
+  {
+    "query": "What kind of landscape am I looking at?",
+    "task": "single_image"
+  },
+  {
+    "query": "What stands out most in the imagery?",
+    "task": "single_image"
+  },
+  {
+    "query": "What are the major surface types here?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does this appear to be a heavily modified landscape?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which parts look relatively untouched?",
+    "task": "single_image"
+  },
+  {
+    "query": "What evidence of human activity can be seen?",
+    "task": "single_image"
+  },
+  {
+    "query": "How would you characterize the land use here?",
+    "task": "single_image"
+  },
+  {
+    "query": "What dominates the landscape visually?",
+    "task": "single_image"
+  },
+  {
+    "query": "Is there a clear distinction between developed and undeveloped land?",
+    "task": "single_image"
+  },
+  {
+    "query": "What areas appear to be densely occupied?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where do natural surfaces appear to dominate?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which regions appear to have regular geometric boundaries?",
+    "task": "single_image"
+  },
+  {
+    "query": "Do the visible patterns resemble agricultural parcels?",
+    "task": "single_image"
+  },
+  {
+    "query": "What clues indicate the presence of farming?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you distinguish different types of open land?",
+    "task": "single_image"
+  },
+  {
+    "query": "What are the largest contiguous areas in the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where is the landscape most heterogeneous?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are there areas where several land-cover types meet?",
+    "task": "single_image"
+  },
+  {
+    "query": "How are the major landscape components arranged?",
+    "task": "single_image"
+  },
+  {
+    "query": "What features form recognizable clusters?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify any corridors through the landscape?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the scene suggest a compact or dispersed settlement?",
+    "task": "single_image"
+  },
+  {
+    "query": "What types of surfaces surround the developed regions?",
+    "task": "single_image"
+  },
+
+  {
+    "query": "What became different between the observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Does the later view tell a different story about the area?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "How did the overall appearance evolve?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What is no longer the same?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which parts of the landscape underwent transformation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Where is the strongest evidence of development?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the pattern of human activity intensify?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the landscape shifted toward more built-up surfaces?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the edges of developed areas move?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did natural areas become smaller or more fragmented?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the arrangement of agricultural parcels changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did previously separated developed areas become connected?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Are the same landscape zones present in both observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which features are persistent across the observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which regions appear stable despite the passage of time?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the dominant land-cover pattern remain intact?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was there a shift from natural land toward human use?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did any large continuous area become fragmented?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the amount of open space changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the spatial organization of settlements become different?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the landscape become more densely occupied?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the shape of developed regions change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Are new land-cover boundaries visible in the later observation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did areas of similar land cover become more or less connected?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Where is the transition between the two observations most obvious?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the overall composition of the landscape shift?",
+    "task": "change_analysis"
+  },
+
+  {
+    "query": "Can the two views be interpreted together?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What does looking at both sources tell us?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the additional sensor resolve uncertainty here?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What becomes clearer when both observations are considered?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Do the two sources provide complementary evidence?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the radar perspective improve interpretation of this scene?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What information is missing from one view but available in the other?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Are the apparent land-cover classes consistent across both sources?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which interpretation is more reliable when both observations are used?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the additional imagery help separate similar-looking surfaces?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What surface properties can be inferred from combining the observations?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the two views help identify ambiguous regions?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Does the second modality provide evidence that is absent from the first?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which areas are better understood when both datasets are considered?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the complementary information distinguish two visually similar areas?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What additional clues does the radar perspective provide?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the optical information help interpret the radar response?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What does each observation contribute to the interpretation?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Are there features whose classification depends on using both sources?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can both views distinguish constructed surfaces from natural ones?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Use the complementary observations to identify uncertain surface types.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Does combining the imagery improve confidence in the classification?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the different sensor responses reveal hidden spatial patterns?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which features have different signatures across the two observations?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can both observations be used to characterize the same landscape more completely?",
+    "task": "multimodal"
+  },
+
+  {
+    "query": "Tell me whether the scene is dominated by natural or human-made features.",
+    "task": "single_image"
+  },
+  {
+    "query": "What would you consider the primary land use in this scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which region would you classify as the core developed area?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where does the built environment appear to end?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which areas seem suitable for identifying crop patterns?",
+    "task": "single_image"
+  },
+  {
+    "query": "Did the developed footprint become larger in the later observation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Was there a conversion of open surfaces into developed surfaces?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the natural landscape become increasingly interrupted by infrastructure?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Has the relationship between green space and built-up space shifted?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did previously similar regions develop different land-cover characteristics?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can the two sensor perspectives distinguish surfaces with similar colors?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Would combining the observations make the land-cover interpretation more dependable?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the radar perspective add structural information to the optical interpretation?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which features become apparent only through complementary sensor information?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Where are the buildings?",
+    "task": "single_image"
+  },
+  {
+    "query": "Where did the buildings appear?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Where are the buildings according to both sensors?",
+    "task": "multimodal"
+  },
+
+  {
+    "query": "Describe the vegetation.",
+    "task": "single_image"
+  },
+  {
+    "query": "Describe how the vegetation changed.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Describe the vegetation using both sensors.",
+    "task": "multimodal"
+  },
+
+  {
+    "query": "Identify the water body.",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify how the water body changed.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Identify the water body using optical and radar information.",
+    "task": "multimodal"
+  },
+
+  {
+    "query": "Analyze the urban area.",
+    "task": "single_image"
+  },
+  {
+    "query": "Analyze the urban area's expansion.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Analyze the urban area using both sensor types.",
+    "task": "multimodal"
+  },
+
+  {
+    "query": "What is visible in the image?",
+    "task": "single_image"
+  },
+  {
+    "query": "What became visible in the second image?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What becomes visible when both images are combined?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Where did the new buildings appear?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Is there a river in the image?",
+    "task": "single_image"
+  },
+  {
+    "query": "Did the river change its course?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What do both sensors reveal about the river?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Identify the urban areas.",
+    "task": "single_image"
+  },
+  {
+    "query": "Identify the areas where urban development increased.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Identify urban areas using optical and SAR imagery.",
+    "task": "multimodal"
+  },
+  {
+    "query": "What types of land cover are visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "How did the land cover change between the observations?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What does the combined imagery reveal about land cover?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Locate the agricultural fields.",
+    "task": "single_image"
+  },
+  {
+    "query": "Which agricultural fields changed over time?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can both sensors identify the agricultural fields?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Are there any roads visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Did the road network expand?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can optical and SAR data jointly identify the roads?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Locate the forested areas.",
+    "task": "single_image"
+  },
+  {
+    "query": "Where did forest cover decrease?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can both sensors help identify forested regions?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What structures are visible?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which new structures appeared?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can both modalities detect the structures?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Locate the water bodies.",
+    "task": "single_image"
+  },
+  {
+    "query": "Which water bodies became larger?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can both sensors confirm the water bodies?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What is the dominant feature in the scene?",
+    "task": "single_image"
+  },
+  {
+    "query": "What became the dominant feature in the later image?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What does the combined sensor data indicate?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Describe the built-up area.",
+    "task": "single_image"
+  },
+  {
+    "query": "Describe how the built-up area expanded.",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Describe the built-up area using both sensor types.",
+    "task": "multimodal"
+  },
+  {
+    "query": "Is the area densely populated with buildings?",
+    "task": "single_image"
+  },
+  {
+    "query": "Has building density increased?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can both sensors estimate the building density?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What natural features are present?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which natural features have changed?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What natural features are confirmed by both sensors?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Where is the shoreline?",
+    "task": "single_image"
+  },
+  {
+    "query": "How has the shoreline shifted?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What do optical and radar images show about the shoreline?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can you identify areas affected by flooding?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which areas became flooded?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can both sensors be used to detect flooded areas?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What does this satellite image contain?",
+    "task": "single_image"
+  },
+  {
+    "query": "What appeared between the two satellite images?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What can be identified by combining the two satellite images?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which areas are covered by vegetation?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which areas lost vegetation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which areas of vegetation are visible in both sensor modalities?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can you locate the settlement?",
+    "task": "single_image"
+  },
+  {
+    "query": "Did the settlement expand?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can both optical and SAR imagery locate the settlement?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What infrastructure can be seen?",
+    "task": "single_image"
+  },
+  {
+    "query": "What infrastructure was added over time?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What infrastructure can be detected using both modalities?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which areas appear to be bare land?",
+    "task": "single_image"
+  },
+  {
+    "query": "Did the amount of bare land increase?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can both sensors distinguish bare land from vegetation?",
+    "task": "multimodal"
+  },
+  {
+    "query": "What is visible around the lake?",
+    "task": "single_image"
+  },
+  {
+    "query": "What changed around the lake?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "What do both sensors show around the lake?",
+    "task": "multimodal"
+  },
+
+  {
+    "query": "Is the dark patch water, shadow, or dense vegetation in this image?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the image show a road or a narrow river?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are the bright rectangular shapes buildings, bare soil, or storage areas?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which apparent fields are actually natural vegetation patches?",
+    "task": "single_image"
+  },
+  {
+    "query": "Can you identify the scene without assuming that every straight line is a road?",
+    "task": "single_image"
+  },
+  {
+    "query": "Is the open area farmland, construction ground, or an unused surface?",
+    "task": "single_image"
+  },
+  {
+    "query": "Do the clustered bright pixels represent one large structure or several small structures?",
+    "task": "single_image"
+  },
+  {
+    "query": "Which land-cover interpretation is least certain from this image alone?",
+    "task": "single_image"
+  },
+  {
+    "query": "Does the shoreline indicate water, wet soil, or a shadowed boundary?",
+    "task": "single_image"
+  },
+  {
+    "query": "Are the regular patches evidence of crops or simply a repeating natural pattern?",
+    "task": "single_image"
+  },
+  {
+    "query": "Did the apparent water body become smaller, or did the image conditions change?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did vegetation actually disappear, or was it replaced by a different-looking crop?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Are the new bright patches construction, exposed soil, or a seasonal effect?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the road network expand, or did an existing road become more visible?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the settlement grow outward or merely become clearer in the later image?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which changes remain convincing after ignoring differences caused by viewing conditions?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did farmland become urban land, or did the field boundaries simply change appearance?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Are apparent new structures genuine additions or artifacts of image alignment?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Did the river move, or did its visible width change because of water level?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Which unchanged features help distinguish real change from seasonal variation?",
+    "task": "change_analysis"
+  },
+  {
+    "query": "Can optical color and radar backscatter distinguish water from dark shadow?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Do the two sensors agree that the bright region is a building rather than bare soil?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can SAR clarify whether the linear feature is a road, river, or field boundary?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Does combining both observations separate crops from natural vegetation?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which sensor provides stronger evidence for the suspected flooded area?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the two image types distinguish construction debris from exposed ground?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Do optical and radar evidence support the same interpretation of the shoreline?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can one modality explain why a region looks like water in the other?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Which apparent land-cover boundary is supported by both sensor responses?",
+    "task": "multimodal"
+  },
+  {
+    "query": "Can the combined imagery distinguish a dense settlement from a cluster of natural bright surfaces?",
+    "task": "multimodal"
   }
 ]

@@ -15,6 +15,21 @@ def _prepare_inputs(
 
     images = request.images
 
+    required_images = {
+        "single_image": 1,
+        "change_analysis": 2,
+        "multimodal": 2,
+    }.get(task)
+
+    if required_images is None:
+        raise ValueError(f"Unsupported task: {task}")
+
+    if len(images) < required_images:
+        raise ValueError(
+            f"Task '{task}' requires at least {required_images} image(s); "
+            f"received {len(images)}."
+        )
+
     metadata = (
         request.metadata
         or {}
@@ -71,13 +86,15 @@ def _prepare_inputs(
         # preserve the conventional ordering.
         # ------------------------------------------------
 
-        if (
-            optical_image is None
-            or sar_image is None
-        ):
+        if optical_image is None and sar_image is None:
 
             optical_image = images[0]
             sar_image = images[1]
+        elif optical_image is None or sar_image is None:
+            raise ValueError(
+                "Multimodal analysis requires one optical and one SAR image. "
+                "Set each image's modality to 'optical' or 'sar'."
+            )
 
         return {
             "optical_image": optical_image,
@@ -86,9 +103,7 @@ def _prepare_inputs(
             "metadata": metadata,
         }
 
-    raise ValueError(
-        f"Unsupported task: {task}"
-    )
+    raise ValueError(f"Unsupported task: {task}")
 
 
 def process(
@@ -213,6 +228,19 @@ def process(
                 )
                 else "failed"
             ),
+            "parameters": {
+                "query": request.query,
+                "image_count": len(request.images),
+                "metadata": request.metadata or {},
+            },
+            "output": {
+                "success": result.get("success", False),
+                "answer": result.get("answer", result.get("result", "")),
+                "confidence": result.get("confidence"),
+                "model": result.get("model"),
+                "visual_output": result.get("visual_output"),
+                "metadata": result.get("metadata", {}),
+            },
         })
 
         # ==================================================
@@ -224,6 +252,26 @@ def process(
 
             "status": "success",
         })
+
+        execution_summary = {
+            "selected_task": decision.task,
+            "tools_used": [result.get("tool")],
+            "models_used": [result.get("model")],
+            "tool": result.get("tool"),
+            "model": result.get("model"),
+            "parameters": {
+                "query": request.query,
+                "image_count": len(request.images),
+                "metadata": request.metadata or {},
+            },
+            "output": {
+                "success": result.get("success", False),
+                "answer": result.get("answer", result.get("result", "")),
+                "confidence": result.get("confidence"),
+                "visual_output": result.get("visual_output"),
+                "metadata": result.get("metadata", {}),
+            },
+        }
 
         return AgentResult(
 
@@ -258,10 +306,10 @@ def process(
 
             error=None,
 
-            metadata=result.get(
-                "metadata",
-                {}
-            ),
+            metadata={
+                **result.get("metadata", {}),
+                "execution_summary": execution_summary,
+            },
         )
 
     except Exception as e:
@@ -280,7 +328,7 @@ def process(
 
             answer="",
 
-            task="unknown",
+            task=(trace[0].get("task", "unknown") if trace else "unknown"),
 
             confidence=None,
 

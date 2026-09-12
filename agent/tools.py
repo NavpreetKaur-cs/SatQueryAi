@@ -12,7 +12,7 @@ def _image_label(image: Any) -> str:
 
 
 # ============================================================
-# MOCK SPECIALIST TOOLS
+# REAL SPECIALIST TOOLS
 # ============================================================
 
 
@@ -25,33 +25,43 @@ def single_image_tool(image, query, metadata=None):
 
 
 def change_analysis_tool(image1, image2, query, metadata=None):
-    return {
-        "success": True,
-        "answer": "Mock change-analysis result.",
-        "confidence": 0.85,
-        "model": "change-analysis-baseline",
-        "visual_output": None,
-        "metadata": {
-            "module": "change_analysis",
-            "image1": _image_label(image1),
-            "image2": _image_label(image2),
-        },
-    }
+    """Run Person 5's bi-temporal change-analysis implementation."""
+    from modules.change_analysis.interface import (
+        change_analysis_tool as real_change_analysis_tool,
+    )
+
+    return real_change_analysis_tool(
+        image1=image1,
+        image2=image2,
+        query=query,
+        metadata=metadata,
+    )
 
 
 def multimodal_tool(optical_image, sar_image, query, metadata=None):
-    return {
-        "success": True,
-        "answer": "Mock optical + SAR analysis.",
-        "confidence": 0.82,
-        "model": "multimodal-baseline",
-        "visual_output": None,
-        "metadata": {
-            "module": "multimodal",
-            "optical_image": _image_label(optical_image),
-            "sar_image": _image_label(sar_image),
-        },
-    }
+    try:
+        from modules.multimodal.interface import multimodal_tool as real_multimodal_tool
+
+        return real_multimodal_tool(
+            optical_image=optical_image,
+            sar_image=sar_image,
+            query=query,
+            metadata=metadata,
+        )
+    except Exception as exc:
+        return {
+            "success": False,
+            "answer": "",
+            "confidence": None,
+            "model": "multimodal-stub-v0",
+            "visual_output": None,
+            "metadata": {
+                "module": "multimodal",
+                "optical_image": _image_label(optical_image),
+                "sar_image": _image_label(sar_image),
+                "error": str(exc),
+            },
+        }
 
 
 # ============================================================
