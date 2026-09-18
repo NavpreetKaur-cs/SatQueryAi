@@ -104,7 +104,7 @@ On failure (bad imageId, corrupt image, anything else), `success` is
 `false` and `error` has a message — always HTTP 200, so the frontend never
 has to special-case a raw 500 vs. a handled failure.
 
-## Integration with the agent (Person 5)
+## Integration with the agent
 
 **Confirmed and tested** against the real `agent/controller.py`,
 `agent/request.py`, and `agent/response.py` — `using_real_agent` on
