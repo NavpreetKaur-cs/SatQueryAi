@@ -1,4 +1,4 @@
-# SatQuery AI — Frontend (SIH26167)
+# SatQuery AI — Frontend
 
 Frontend-only build of the SatQuery AI interface: a chat-style query panel next
 to a pan/zoom satellite image viewer that highlights the regions an answer is
@@ -125,14 +125,3 @@ chat bubbles) rather than a generic chatbot skin, since the real audience is
 someone cross-referencing bands and tiles, not chatting casually. Two
 accents only: teal for active/system state, coral/amber for detected regions
 on the imagery itself.
-
-## Known gaps / next steps
-
-- No real backend yet — see integration contract above.
-- No auth/session handling — add if the deployed demo needs to be gated.
-- `CompareViewer`'s view-sync assumes both images are roughly the same
-  geographic extent; for wildly different-sized before/after tiles you may
-  want independent zoom with only pan synced, not full view sync.
-- No automated tests yet (no test runner is configured). If this grows past
-  the hackathon, Vitest + React Testing Library would be the natural fit
-  given the Vite setup already here.
