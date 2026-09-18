@@ -583,21 +583,61 @@ def analyze_change(
 
         visuals["semantic_change_map"] = semantic_map_path
 
+    trained_answer = None
+    trained_confidence = None
+    checkpoint_path = Path(
+        options.get(
+            "trained_model_path",
+            "models/change_analysis/checkpoints/cdvqa_classifier.joblib",
+        )
+    )
+
+    if checkpoint_path.exists():
+        try:
+            from models.change_analysis.trained_classifier import (
+                load_classifier,
+                predict_classifier,
+            )
+
+            trained_model = load_classifier(checkpoint_path)
+            trained_answer, trained_confidence = predict_classifier(
+                trained_model,
+                Path(before_path),
+                Path(after_path),
+                query,
+            )
+        except (ImportError, OSError, ValueError, RuntimeError):
+            trained_answer = None
+            trained_confidence = None
+
+    answer = _answer(query, overall_pct, class_changes)
+    confidence = round(
+        min(
+            0.99,
+            0.55 + min(overall_pct, 20) / 50
+        ),
+        2
+    )
+
+    if trained_answer is not None:
+        if trained_answer in ("yes", "no"):
+            if trained_answer == "yes":
+                answer = _answer(query, overall_pct, class_changes)
+            else:
+                answer = "No material change was detected in the queried region."
+        else:
+            answer = f"The trained CDVQA model identifies the answer as {trained_answer}."
+        confidence = round(float(trained_confidence), 2)
+
     return {
         "success": True,
-        "answer": _answer(
-            query,
-            overall_pct,
-            class_changes
+        "answer": answer,
+        "confidence": confidence,
+        "model": (
+            "cdvqa-trained-classifier-v1"
+            if trained_answer is not None
+            else "opencv-change-baseline-v1"
         ),
-        "confidence": round(
-            min(
-                0.99,
-                0.55 + min(overall_pct, 20) / 50
-            ),
-            2
-        ),
-        "model": "opencv-change-baseline-v1",
         "visual_output": visuals.get(
             "change_overlay"
         ),

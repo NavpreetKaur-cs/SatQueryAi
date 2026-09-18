@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 from modules.change_analysis.interface import change_analysis_tool
+from modules.change_analysis.evaluate_cdvqa_comprehensive import answer_matches_reference
 
 
 def test_detects_and_visualizes_synthetic_change(tmp_path):
@@ -29,3 +30,9 @@ def test_rejects_missing_input():
     result = change_analysis_tool("missing-before.png", "missing-after.png", "What changed?")
     assert not result["success"]
     assert "Cannot read image" in result["metadata"]["error"]
+
+
+def test_binary_matcher_handles_negated_change_answers():
+    assert answer_matches_reference("did not materially change", "no", 0.70)
+    assert not answer_matches_reference("visible vegetation increased", "no", 0.70)
+    assert answer_matches_reference("visible vegetation increased", "yes", 0.89)
