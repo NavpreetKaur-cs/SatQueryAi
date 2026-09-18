@@ -50,9 +50,18 @@ import { runQuery as mockRunQuery } from './mockBackend';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
+// The frontend's internal "scene" shape (see useSceneImage.js) uses `url`
+// for local rendering. The wire contract uses `dataUrl`. This is the one
+// place that difference gets bridged — everything else on either side
+// only ever sees its own field name.
+function toWireImage(scene) {
+  if (!scene) return null;
+  return { dataUrl: scene.url, width: scene.width, height: scene.height };
+}
+
 export async function sendQuery({ question, before, after }) {
   const requestBody = {
-    images: { before, after: after || null },
+    images: { before: toWireImage(before), after: toWireImage(after) },
     query: question,
     metadata: {},
   };

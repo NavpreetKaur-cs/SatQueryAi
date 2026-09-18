@@ -9,7 +9,7 @@ export default function Header({ mode, onModeChange }) {
       <div className="flex overflow-hidden rounded-sm border border-graphite-700">
         {[
           { key: 'single', label: 'Single image' },
-          { key: 'compare', label: 'Compare (before / after)' },
+          { key: 'compare', label: '2 images' },
         ].map((opt) => (
           <button
             key={opt.key}
