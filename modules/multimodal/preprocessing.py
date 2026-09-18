@@ -15,6 +15,7 @@ from dataclasses import dataclass
 from typing import Optional, Tuple
 
 import numpy as np
+import cv2
 import rasterio
 from rasterio.coords import BoundingBox
 
@@ -58,6 +59,7 @@ def check_co_registration(
     optical: LoadedImage,
     sar: LoadedImage,
     bounds_tolerance: float = 1e-3,
+    allow_dimension_mismatch: bool = False,
 ) -> None:
     """
     Verify the optical and SAR images cover the same geographic area at
@@ -91,7 +93,10 @@ def check_co_registration(
                 "Images must be co-registered (same geographic extent)."
             )
 
-    if (optical.width, optical.height) != (sar.width, sar.height):
+    if (
+        not allow_dimension_mismatch
+        and (optical.width, optical.height) != (sar.width, sar.height)
+    ):
         raise CoRegistrationError(
             f"Pixel dimension mismatch: optical={optical.width}x{optical.height}, "
             f"sar={sar.width}x{sar.height}. Resample one image to match "
@@ -162,9 +167,22 @@ def load_and_validate_pair(
     optical = load_image(optical_path)
     sar = load_image(sar_path)
 
-    check_co_registration(optical, sar)
+    check_co_registration(optical, sar, allow_dimension_mismatch=True)
 
     optical_norm = normalize_optical(optical.array)
     sar_norm = normalize_sar(sar.array)
+
+    if (optical.width, optical.height) != (sar.width, sar.height):
+        sar_norm = np.stack(
+            [
+                cv2.resize(
+                    band,
+                    (optical.width, optical.height),
+                    interpolation=cv2.INTER_AREA,
+                )
+                for band in sar_norm
+            ],
+            axis=0,
+        )
 
     return optical_norm, sar_norm

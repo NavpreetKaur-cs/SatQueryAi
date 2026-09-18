@@ -99,6 +99,7 @@ export default function App() {
                   confidence: result.confidence,
                   regions: result.regions,
                   queryType: result.queryType,
+                  visualOutput: result.visualOutput,
                 }
               : entry
           )

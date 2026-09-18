@@ -304,7 +304,7 @@ def process(
 
             trace=trace,
 
-            error=None,
+            error=result.get("error") or result.get("metadata", {}).get("error"),
 
             metadata={
                 **result.get("metadata", {}),

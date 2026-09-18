@@ -46,9 +46,47 @@ def _normalize_task(task: Optional[str]) -> str:
     return normalized
 
 
+def _modality(image: Any) -> str:
+    value = image.get("modality") if isinstance(image, dict) else getattr(image, "modality", None)
+    return str(value or "").strip().lower()
+
+
 def route_query(query: str, images=None, metadata=None) -> RouteDecision:
     if not query or not str(query).strip():
         raise ValueError("Query cannot be empty.")
+
+    images = list(images or [])
+    modalities = {_modality(image) for image in images}
+    has_optical = bool(modalities & {"optical", "multispectral"})
+    has_sar = bool(modalities & {"sar", "radar"})
+    query_text = str(query).strip().lower()
+
+    if len(images) == 1:
+        return RouteDecision(
+            task="single_image",
+            confidence=1.0,
+            method="image_count",
+            details={"image_count": 1, "modalities": sorted(modalities)},
+        )
+
+    if len(images) >= 2 and (
+        (has_optical and has_sar)
+        or ("optical" in query_text and "sar" in query_text)
+    ):
+        return RouteDecision(
+            task="multimodal",
+            confidence=1.0 if has_optical and has_sar else 0.9,
+            method="image_modalities",
+            details={"image_count": len(images), "modalities": sorted(modalities)},
+        )
+
+    if len(images) >= 2:
+        return RouteDecision(
+            task="change_analysis",
+            confidence=1.0,
+            method="image_count",
+            details={"image_count": len(images), "modalities": sorted(modalities)},
+        )
 
     prediction = classify_query(str(query).strip())
     task = _normalize_task(prediction.get("task"))

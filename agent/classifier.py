@@ -1,4 +1,5 @@
 import json
+from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict
 
@@ -22,6 +23,7 @@ def _resolve_model_dir() -> Path:
     return default_dir
 
 
+@lru_cache(maxsize=1)
 def load_classifier() -> Dict[str, Any]:
     model_dir = _resolve_model_dir()
     classifier_path = model_dir / "classifier.joblib"

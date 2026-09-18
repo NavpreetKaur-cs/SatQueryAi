@@ -73,13 +73,8 @@ def _normalize_visual_output(visual_output) -> list:
         return visual_output
     if isinstance(visual_output, dict) and "regions" in visual_output:
         return visual_output["regions"] or []
-    # Unrecognized shape — surface it instead of silently dropping it or crashing.
-    return [{
-        "id": "unrecognized",
-        "label": "visual_output (unrecognized shape — check with the module owner)",
-        "bbox": [0, 0, 0, 0],
-        "raw": visual_output,
-    }]
+    # File paths and other non-region visuals are exposed separately.
+    return []
 
 
 def _run_real_agent(query: str, images: dict, metadata: dict) -> dict:
@@ -112,6 +107,7 @@ def _run_real_agent(query: str, images: dict, metadata: dict) -> dict:
         "queryType": d.get("task"),
         "modelsUsed": [d.get("model")] if d.get("model") else [],
         "executionSummary": d.get("metadata", {}).get("execution_summary"),
+        "visualOutput": d.get("visual_output"),
         "error": d.get("error"),
     }
 

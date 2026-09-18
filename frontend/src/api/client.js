@@ -80,6 +80,9 @@ export async function sendQuery({ question, before, after }) {
     confidence: response.confidence,
     regions: response.visual_output?.regions || [],
     queryType: response.metadata?.queryType || 'unknown',
+    visualOutput: response.metadata?.visualOutput
+      ? `${API_BASE_URL}/${response.metadata.visualOutput.replaceAll('\\', '/')}`
+      : null,
   };
 }
 

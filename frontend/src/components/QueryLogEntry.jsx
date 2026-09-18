@@ -37,6 +37,25 @@ export default function QueryLogEntry({ entry, onFocusRegion, focusedRegionId })
         </span>
       )}
       <p className="font-body text-[13px] leading-snug text-fog-200">{entry.text}</p>
+      {entry.visualOutput && (
+        <div className="mt-2 flex gap-3">
+          <a
+            href={entry.visualOutput}
+            target="_blank"
+            rel="noreferrer"
+            className="font-data text-[10px] uppercase tracking-wide text-signal hover:text-paper"
+          >
+            Open change overlay
+          </a>
+          <a
+            href={entry.visualOutput}
+            download="change-overlay.png"
+            className="font-data text-[10px] uppercase tracking-wide text-signal hover:text-paper"
+          >
+            Download PNG
+          </a>
+        </div>
+      )}
       {typeof entry.confidence === 'number' && (
         <div className="mt-1.5 flex items-center gap-1.5">
           <div className="h-1 w-16 overflow-hidden rounded-sm bg-graphite-700">

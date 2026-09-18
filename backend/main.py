@@ -23,13 +23,21 @@ from schemas import QueryRequest, QueryResponse, UploadResponse, VisualOutput
 load_dotenv()
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-CORS_ORIGINS = [o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")]
+CORS_ORIGINS = [
+    o.strip()
+    for o in os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173",
+    ).split(",")
+    if o.strip()
+]
 
 app = FastAPI(title="SatQuery AI Backend")
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
+    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1)(:\d+)?$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -38,6 +46,7 @@ app.add_middleware(
 # Serves uploaded originals + generated previews at /uploads/originals/... and
 # /uploads/previews/... so the frontend can load them directly as <img> src.
 app.mount("/uploads", StaticFiles(directory=REPO_ROOT / "uploads"), name="uploads")
+app.mount("/outputs", StaticFiles(directory=REPO_ROOT / "outputs"), name="outputs")
 
 
 @app.get("/health")
@@ -110,7 +119,11 @@ async def query(req: QueryRequest):
         if not agent_result.get("success", True):
             return QueryResponse(
                 success=False,
-                error=agent_result.get("error") or "Agent reported failure with no error message.",
+                error=(
+                    agent_result.get("error")
+                    or agent_result.get("metadata", {}).get("error")
+                    or "Agent reported failure with no error message."
+                ),
                 metadata={"queryType": agent_result.get("queryType")},
             )
 
@@ -123,6 +136,7 @@ async def query(req: QueryRequest):
                 "queryType": agent_result.get("queryType"),
                 "modelsUsed": agent_result.get("modelsUsed", []),
                 "executionSummary": agent_result.get("executionSummary"),
+                "visualOutput": agent_result.get("visualOutput"),
             },
         )
     except image_store.ImageStoreError as e:
