@@ -84,14 +84,14 @@ def _run_real_agent(query: str, images: dict, metadata: dict) -> dict:
     agent_images = [
         AgentImageInput(
             path=before["path"],
-            modality=metadata.get("beforeModality"),
+            modality=before.get("modality") or metadata.get("beforeModality"),
         )
     ]
     if after:
         agent_images.append(
             AgentImageInput(
                 path=after["path"],
-                modality=metadata.get("afterModality"),
+                modality=after.get("modality") or metadata.get("afterModality"),
             )
         )
 

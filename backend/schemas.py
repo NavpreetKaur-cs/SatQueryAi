@@ -26,6 +26,7 @@ class ImageInput(BaseModel):
     dataUrl: Optional[str] = None
     width: Optional[int] = None
     height: Optional[int] = None
+    modality: Optional[str] = None
 
 
 class ImagesInput(BaseModel):

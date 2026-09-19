@@ -8,6 +8,7 @@ See ../backend/README.md for full setup, endpoint docs, and known gaps.
 """
 
 import os
+import sys
 import traceback
 from pathlib import Path
 
@@ -16,13 +17,18 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
+# Allow the documented `uvicorn main:app` command from backend/ to import
+# the repository-level agent and modules packages.
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
 import agent_client
 import image_store
 from schemas import QueryRequest, QueryResponse, UploadResponse, VisualOutput
 
 load_dotenv()
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
 CORS_ORIGINS = [
     o.strip()
     for o in os.getenv(
@@ -102,12 +108,14 @@ async def query(req: QueryRequest):
                     "path": before_record["path"],
                     "width": before_record["width"],
                     "height": before_record["height"],
+                    "modality": req.images.before.modality,
                 },
                 "after": (
                     {
                         "path": after_record["path"],
                         "width": after_record["width"],
                         "height": after_record["height"],
+                        "modality": req.images.after.modality,
                     }
                     if after_record
                     else None
