@@ -55,6 +55,26 @@ app.mount("/uploads", StaticFiles(directory=REPO_ROOT / "uploads"), name="upload
 app.mount("/outputs", StaticFiles(directory=REPO_ROOT / "outputs"), name="outputs")
 
 
+def _public_visual_output(path_value):
+    """Convert an output file path into a URL served by this API."""
+    if not isinstance(path_value, str) or not path_value:
+        return None
+
+    output_root = (REPO_ROOT / "outputs").resolve()
+    candidate = Path(path_value)
+    if not candidate.is_absolute():
+        candidate = (Path.cwd() / candidate).resolve()
+    else:
+        candidate = candidate.resolve()
+
+    try:
+        relative_path = candidate.relative_to(output_root)
+    except ValueError:
+        return None
+
+    return f"/outputs/{relative_path.as_posix()}"
+
+
 @app.get("/health")
 def health():
     return {"status": "ok", "using_real_agent": agent_client.USING_REAL_AGENT}
@@ -96,6 +116,8 @@ async def query(req: QueryRequest):
     keyword-based mock until then.
     """
     try:
+        metadata = dict(req.metadata or {})
+        metadata.setdefault("output_dir", str(REPO_ROOT / "outputs" / "change_analysis"))
         before_record = image_store.resolve_image(req.images.before.imageId, req.images.before.dataUrl)
         after_record = None
         if req.images.after:
@@ -121,7 +143,7 @@ async def query(req: QueryRequest):
                     else None
                 ),
             },
-            metadata=req.metadata,
+            metadata=metadata,
         )
 
         if not agent_result.get("success", True):
@@ -144,7 +166,7 @@ async def query(req: QueryRequest):
                 "queryType": agent_result.get("queryType"),
                 "modelsUsed": agent_result.get("modelsUsed", []),
                 "executionSummary": agent_result.get("executionSummary"),
-                "visualOutput": agent_result.get("visualOutput"),
+                "visualOutput": _public_visual_output(agent_result.get("visualOutput")),
             },
         )
     except image_store.ImageStoreError as e:
