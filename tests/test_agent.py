@@ -113,7 +113,7 @@ from agent.request import AgentRequest, ImageInput
 
 
 def test_trained_multimodal_model():
-    optical_path = Path("data/optical_sar/optical.png")
+    optical_path = Path("data/optical_sar/image.png")
     sar_path = Path("data/optical_sar/sar.png")
 
     assert optical_path.exists()

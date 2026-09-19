@@ -17,6 +17,7 @@ the real pipeline is being built out.
 """
 
 import os
+from pathlib import Path
 from typing import Any, Dict, Optional
 
 from .preprocessing import load_and_validate_pair, CoRegistrationError
@@ -56,6 +57,7 @@ def _get_path(image: Any) -> Optional[str]:
 
 
 SUPPORTED_EXTENSIONS = {".tif", ".tiff", ".png", ".jpg", ".jpeg"}
+REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def _validate_image_input(image: Any, label: str) -> Optional[str]:
@@ -107,9 +109,9 @@ def _get_pipeline_components():
         _fusion = MultimodalFusion(strategy="concat", feature_dim=512)
     if _task_head is None:
         _task_head = TaskHead(feature_dim=512)
-        checkpoint_path = "models/multimodal/checkpoints/land_cover_head.pt"
+        checkpoint_path = REPO_ROOT / "models" / "multimodal" / "checkpoints" / "land_cover_head.pt"
         if os.path.exists(checkpoint_path):
-            _task_head.load_weights(checkpoint_path)
+            _task_head.load_weights(str(checkpoint_path))
         # else: stays untrained -- module honestly reports "not yet trained"
     return _feature_extractor, _fusion, _task_head
 
@@ -215,11 +217,9 @@ def multimodal_tool(
     )
     visual_output = None
     try:
-        output_path = os.path.join(
-            "outputs", "multimodal", f"overlay_{os.getpid()}_{id(query)}.png"
-        )
+        output_path = REPO_ROOT / "outputs" / "multimodal" / f"overlay_{os.getpid()}_{id(query)}.png"
         visual_output = generate_overlay(
-            optical_arr, task_result.category, present, task_result.confidence, output_path
+            optical_arr, task_result.category, present, task_result.confidence, str(output_path)
         )
     except Exception as e:
         # Visualization is a nice-to-have; a failure here should not

@@ -56,7 +56,12 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 // only ever sees its own field name.
 function toWireImage(scene) {
   if (!scene) return null;
-  return { dataUrl: scene.url, width: scene.width, height: scene.height };
+  return {
+    dataUrl: scene.url,
+    width: scene.width,
+    height: scene.height,
+    modality: scene.modality,
+  };
 }
 
 export async function sendQuery({ question, before, after }) {
