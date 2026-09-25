@@ -35,3 +35,9 @@ models/multimodal/checkpoints/*.npz
 !models/multimodal/checkpoints/
 !models/multimodal/checkpoints/land_cover_head.pt
 uploads/
+outputs/
+backend/outputs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
